@@ -15,9 +15,9 @@
             <StackPanel Margin="0, 30, 0, 0">
                 <TextBlock Text="💊 MedTracker" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,40"/>
 
-                <Button x:Name="BtnHome" Content="Головна" Height="45" Margin="15,5" Background="#34495E" Foreground="White" FontSize="16" BorderThickness="0" Cursor="Hand" Click="BtnHome_Click"/>
-                <Button x:Name="BtnInventory" Content="Список ліків" Height="45" Margin="15,5" Background="#34495E" Foreground="White" FontSize="16" BorderThickness="0" Cursor="Hand" Click="BtnInventory_Click"/>
-                <Button x:Name="BtnSettings" Content="Налаштування" Height="45" Margin="15,5" Background="#34495E" Foreground="White" FontSize="16" BorderThickness="0" Cursor="Hand" Click="BtnSettings_Click"/>
+                <Button x:Name="BtnHome" Content="Головна" Style="{StaticResource ActionBtnStyle}" Height="45" Margin="15,5"/>
+                <Button x:Name="BtnInventory" Content="Список ліків" Style="{StaticResource ActionBtnStyle}" Height="45" Margin="15,5"/>
+                <Button x:Name="BtnSettings" Content="Налаштування" Style="{StaticResource ActionBtnStyle}" Height="45" Margin="15,5"/>
             </StackPanel>
         </Border>
 
