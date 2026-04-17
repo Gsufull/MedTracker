@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using MedTracker.Views; // Додаємо доступ до папки Views
 
 namespace MedTracker
 {
@@ -7,41 +8,25 @@ namespace MedTracker
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.Navigate(new HomePage());
         }
 
-        // Обробники кнопок меню навігації
         private void BtnHome_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Тут буде перехід на Головну сторінку.", "Навігація");
+            MainFrame.Navigate(new HomePage());
         }
 
         private void BtnInventory_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Тут буде перехід до Списку ліків.", "Навігація");
+            MainFrame.Navigate(new InventoryPage());
         }
 
         private void BtnSettings_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Тут буде перехід до Налаштувань.", "Навігація");
+            // Передаємо параметр при переході на сторінку налаштувань
+            MainFrame.Navigate(new SettingsPage("Адміністратор"));
         }
 
-        // Обробник тестової кнопки збереження
-        private void BtnTestSave_Click(object sender, RoutedEventArgs e)
-        {
-            string name = TxtMedicineName.Text;
-            string category = TxtCategory.Text;
-
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                MessageBox.Show("Будь ласка, введіть назву препарату!", "Помилка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
-            }
-
-            MessageBox.Show($"Препарат: {name}\nКатегорія: {category}", "Успішно збережено", MessageBoxButton.OK, MessageBoxImage.Information);
-
-            // Очищення полів після збереження
-            TxtMedicineName.Clear();
-            TxtCategory.Clear();
-        }
+        // Тестову кнопку BtnTestSave_Click можна повністю видалити, вона нам більше не потрібна
     }
 }
