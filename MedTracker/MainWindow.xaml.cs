@@ -23,10 +23,8 @@ namespace MedTracker
 
         private void BtnSettings_Click(object sender, RoutedEventArgs e)
         {
-            // Передаємо параметр при переході на сторінку налаштувань
             MainFrame.Navigate(new SettingsPage("Адміністратор"));
         }
 
-        // Тестову кнопку BtnTestSave_Click можна повністю видалити, вона нам більше не потрібна
     }
 }
