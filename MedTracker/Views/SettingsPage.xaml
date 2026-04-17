@@ -8,7 +8,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SettingsPage">
 
-    <Grid>
-       <TextBlock Text="Налаштування" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid Background="{DynamicResource BgColor}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Увімкнути темну тему" Click="BtnTheme_Click" Padding="10" Background="#2C3E50" Foreground="White"/>
+        </StackPanel>
     </Grid>
 </Page>

@@ -4,17 +4,18 @@ namespace MedTracker.Views
 {
     public partial class SettingsPage : Page
     {
-        public SettingsPage(string userName)
+        public SettingsPage()
         {
             InitializeComponent();
-            TextBlock txt = new TextBlock
-            {
-                Text = $"Налаштування для користувача: {userName}",
-                FontSize = 24,
-                HorizontalAlignment = System.Windows.HorizontalAlignment.Center,
-                VerticalAlignment = System.Windows.VerticalAlignment.Center
-            };
-            this.Content = txt;
+           
+        }
+
+        private bool isDark = false;
+        private void BtnTheme_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            isDark = !isDark;
+            App.ChangeTheme(isDark);
+            (sender as System.Windows.Controls.Button).Content = isDark ? "Увімкнути світлу тему" : "Увімкнути темну тему";
         }
     }
 }

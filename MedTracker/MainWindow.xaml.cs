@@ -8,7 +8,7 @@ namespace MedTracker
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new HomePage());
+            MainFrame.Navigate(new SettingsPage());
         }
 
         private void BtnHome_Click(object sender, RoutedEventArgs e)
@@ -23,7 +23,7 @@ namespace MedTracker
 
         private void BtnSettings_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new SettingsPage("Адміністратор"));
+            MainFrame.Navigate(new SettingsPage());
         }
 
     }
