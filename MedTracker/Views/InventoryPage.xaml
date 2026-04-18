@@ -8,22 +8,41 @@
         <vm:InventoryViewModel/>
     </Page.DataContext>
 
-    <Grid Background="{DynamicResource BgColor}" Margin="10">
-        <StackPanel>
-            <TextBlock Text="Список медикаментів" FontSize="22" FontWeight="Bold" 
-                       Foreground="{DynamicResource TextColor}" Margin="0,0,0,15"/>
+    <Grid Background="{DynamicResource BgColor}" Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1.2*"/>
+        </Grid.ColumnDefinitions>
 
-            <DataGrid ItemsSource="{Binding Medicines}" AutoGenerateColumns="False" 
-                      CanUserAddRows="False" 
-                      Background="{DynamicResource PanelColor}" 
-                      RowBackground="{DynamicResource PanelColor}" 
-                      Foreground="{DynamicResource TextColor}">
+        <StackPanel Grid.Column="0" Margin="0,0,15,0">
+            <TextBlock Text="Список медикаментів" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource TextColor}" Margin="0,0,0,15"/>
+            <DataGrid ItemsSource="{Binding Medicines}" SelectedItem="{Binding SelectedMedicine}" AutoGenerateColumns="False" 
+                      CanUserAddRows="False" Background="{DynamicResource PanelColor}" Foreground="{DynamicResource TextColor}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Назва" Binding="{Binding Name}" Width="*"/>
                     <DataGridTextColumn Header="Категорія" Binding="{Binding Category}" Width="*"/>
-                    <DataGridTextColumn Header="Кількість" Binding="{Binding Quantity}" Width="100"/>
+                    <DataGridTextColumn Header="К-ть" Binding="{Binding Quantity}" Width="60"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+
+        <Border Grid.Column="1" Background="{DynamicResource PanelColor}" Padding="15" CornerRadius="5">
+            <StackPanel>
+                <TextBlock Text="Деталі препарату" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextColor}" Margin="0,0,0,15"/>
+
+                <TextBlock Text="Назва препарату:" Foreground="{DynamicResource TextColor}"/>
+                <TextBox Text="{Binding CurrentMedicine.Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,5,0,10"/>
+
+                <TextBlock Text="Категорія:" Foreground="{DynamicResource TextColor}"/>
+                <TextBox Text="{Binding CurrentMedicine.Category, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,5,0,10"/>
+
+                <TextBlock Text="Кількість:" Foreground="{DynamicResource TextColor}"/>
+                <TextBox Text="{Binding CurrentMedicine.Quantity, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" Margin="0,5,0,20"/>
+
+                <Button Content="Зберегти" Command="{Binding SaveCommand}" Background="#27AE60" Foreground="White" Padding="10" Margin="0,0,0,10" BorderThickness="0" Cursor="Hand"/>
+                <Button Content="Очистити форму" Command="{Binding ClearCommand}" Background="#95A5A6" Foreground="White" Padding="10" Margin="0,0,0,10" BorderThickness="0" Cursor="Hand"/>
+                <Button Content="Видалити" Command="{Binding DeleteCommand}" Background="#E74C3C" Foreground="White" Padding="10" BorderThickness="0" Cursor="Hand"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>
