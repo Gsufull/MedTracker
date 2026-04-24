@@ -1,0 +1,58 @@
+<Page x:Class="MedTracker.Views.RemindersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="{DynamicResource Reminders_Title}">
+
+    <Grid Background="{DynamicResource BgColor}" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{DynamicResource Reminders_Title}" Style="{DynamicResource PageTitleStyle}"/>
+        <TextBlock Grid.Row="1" Text="{DynamicResource Reminders_Desc}" Foreground="{DynamicResource SubTextColor}" FontSize="16" Margin="0,0,0,20"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Border Grid.Column="0" Style="{DynamicResource CardStyle}" Margin="0,0,20,0">
+                <DataGrid x:Name="DgReminders" AutoGenerateColumns="False" IsReadOnly="True">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="{DynamicResource Reminders_ColMed}" Binding="{Binding MedicineName}" Width="*"/>
+                        <DataGridTextColumn Header="{DynamicResource Reminders_ColTime}" Binding="{Binding Time}" Width="100"/>
+                        <DataGridTextColumn Header="{DynamicResource Reminders_ColDosage}" Binding="{Binding Dosage}" Width="150"/>
+                        <DataGridTemplateColumn Header="{DynamicResource Reminders_ColActions}" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{DynamicResource Reminders_BtnDelete}" Style="{DynamicResource DangerBtnStyle}" 
+                                            Padding="10,5" Click="BtnDeleteReminder_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            
+            <Border Grid.Column="1" Style="{DynamicResource CardStyle}" VerticalAlignment="Top">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Reminders_NewTitle}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextColor}" Margin="0,0,0,15"/>
+                    
+                    <TextBlock Text="{DynamicResource Reminders_LblMed}" Style="{DynamicResource LabelStyle}"/>
+                    <ComboBox x:Name="CmbMedicines" DisplayMemberPath="Name" SelectedValuePath="Name" Margin="0,0,0,15"/>
+                    
+                    <TextBlock Text="{DynamicResource Reminders_LblTime}" Style="{DynamicResource LabelStyle}"/>
+                    <TextBox x:Name="TxtTime" Margin="0,0,0,15"/>
+                    
+                    <TextBlock Text="{DynamicResource Reminders_LblDosage}" Style="{DynamicResource LabelStyle}"/>
+                    <TextBox x:Name="TxtDosage" Margin="0,0,0,15"/>
+                    
+                    <Button Content="{DynamicResource Reminders_BtnAdd}" Style="{DynamicResource ActionBtnStyle}" Click="BtnAddReminder_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</Page>

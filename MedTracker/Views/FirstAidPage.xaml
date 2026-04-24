@@ -1,0 +1,34 @@
+<Page x:Class="MedTracker.Views.FirstAidPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="{DynamicResource FirstAid_Title}">
+
+    <Grid Background="{DynamicResource BgColor}" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{DynamicResource FirstAid_Title}" Style="{DynamicResource PageTitleStyle}"/>
+        <TextBlock Grid.Row="1" Text="{DynamicResource FirstAid_Desc}" Foreground="{DynamicResource SubTextColor}" FontSize="16" Margin="0,0,0,20"/>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Border Style="{DynamicResource CardStyle}" Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource FirstAid_Burns}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource AccentColor}" Margin="0,0,0,10"/>
+                        <TextBlock Text="{DynamicResource FirstAid_BurnsDesc}" Foreground="{DynamicResource TextColor}" FontSize="14" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Style="{DynamicResource CardStyle}" Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource FirstAid_Cuts}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource AccentColor}" Margin="0,0,0,10"/>
+                        <TextBlock Text="{DynamicResource FirstAid_CutsDesc}" Foreground="{DynamicResource TextColor}" FontSize="14" TextWrapping="Wrap"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

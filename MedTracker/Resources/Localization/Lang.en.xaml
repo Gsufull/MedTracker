@@ -1,0 +1,130 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- General -->
+    <sys:String x:Key="AppName">💊 MedTracker</sys:String>
+    <sys:String x:Key="Lang_UA">EN</sys:String>
+
+    <!-- Navigation -->
+    <sys:String x:Key="Nav_Home">Home</sys:String>
+    <sys:String x:Key="Nav_Inventory">Medicines</sys:String>
+    <sys:String x:Key="Nav_Settings">Settings</sys:String>
+    <sys:String x:Key="Nav_Admin">Admin Panel</sys:String>
+    <sys:String x:Key="Nav_Reminders">Reminders</sys:String>
+    <sys:String x:Key="Nav_Statistics">Statistics</sys:String>
+    <sys:String x:Key="Nav_FirstAid">First Aid</sys:String>
+    <sys:String x:Key="Nav_Logout">Log Out</sys:String>
+    <sys:String x:Key="Nav_WelcomeUser">Welcome,</sys:String>
+
+    <!-- Auth -->
+    <sys:String x:Key="Auth_Login">Login</sys:String>
+    <sys:String x:Key="Auth_Register">Register</sys:String>
+    <sys:String x:Key="Auth_Username">Username</sys:String>
+    <sys:String x:Key="Auth_Password">Password</sys:String>
+    <sys:String x:Key="Auth_ConfirmPassword">Confirm Password</sys:String>
+    <sys:String x:Key="Auth_Role">Role</sys:String>
+    <sys:String x:Key="Auth_RoleUser">User</sys:String>
+    <sys:String x:Key="Auth_RoleAdmin">Administrator</sys:String>
+    <sys:String x:Key="Auth_LoginBtn">Sign In</sys:String>
+    <sys:String x:Key="Auth_RegisterBtn">Create Account</sys:String>
+    <sys:String x:Key="Auth_NoAccount">Don't have an account?</sys:String>
+    <sys:String x:Key="Auth_HasAccount">Already have an account?</sys:String>
+    <sys:String x:Key="Auth_GoRegister">Register</sys:String>
+    <sys:String x:Key="Auth_GoLogin">Sign In</sys:String>
+    <sys:String x:Key="Auth_ErrEmpty">Please fill in all fields</sys:String>
+    <sys:String x:Key="Auth_ErrWrong">Invalid username or password</sys:String>
+    <sys:String x:Key="Auth_ErrExists">This username is already taken</sys:String>
+    <sys:String x:Key="Auth_ErrPassMatch">Passwords do not match</sys:String>
+    <sys:String x:Key="Auth_ErrShortPass">Password must be at least 4 characters</sys:String>
+    <sys:String x:Key="Auth_Success">Account created successfully!</sys:String>
+    <sys:String x:Key="Auth_Subtitle">Home Medicine Cabinet Manager</sys:String>
+
+    <!-- Home page -->
+    <sys:String x:Key="Home_Title">Home</sys:String>
+    <sys:String x:Key="Home_Welcome">Welcome to MedTracker!</sys:String>
+    <sys:String x:Key="Home_Desc">Your personal home medicine cabinet manager</sys:String>
+    <sys:String x:Key="Home_TotalMeds">Total medicines</sys:String>
+    <sys:String x:Key="Home_Expired">Expired</sys:String>
+    <sys:String x:Key="Home_LowStock">Low stock</sys:String>
+    <sys:String x:Key="Home_GoInventory">Go to medicine list</sys:String>
+    <sys:String x:Key="Home_ExpiredAlert">⚠️ Some medicines are expired! Please review the list.</sys:String>
+
+    <!-- Inventory -->
+    <sys:String x:Key="Inv_Title">Medicine List</sys:String>
+    <sys:String x:Key="Inv_Name">Name</sys:String>
+    <sys:String x:Key="Inv_Category">Category</sys:String>
+    <sys:String x:Key="Inv_Quantity">Qty</sys:String>
+    <sys:String x:Key="Inv_Expiry">Expires</sys:String>
+    <sys:String x:Key="Inv_Notes">Notes</sys:String>
+    <sys:String x:Key="Inv_Details">Medicine Details</sys:String>
+    <sys:String x:Key="Inv_NameLabel">Medicine name:</sys:String>
+    <sys:String x:Key="Inv_CategoryLabel">Category:</sys:String>
+    <sys:String x:Key="Inv_QuantityLabel">Quantity:</sys:String>
+    <sys:String x:Key="Inv_ExpiryLabel">Expiry date:</sys:String>
+    <sys:String x:Key="Inv_NotesLabel">Notes:</sys:String>
+    <sys:String x:Key="Inv_Save">Save</sys:String>
+    <sys:String x:Key="Inv_Clear">Clear</sys:String>
+    <sys:String x:Key="Inv_Delete">Delete</sys:String>
+    <sys:String x:Key="Inv_Search">Search medicines...</sys:String>
+    <sys:String x:Key="Inv_FilterAll">All categories</sys:String>
+    <sys:String x:Key="Inv_ConfirmDelete">Delete this medicine?</sys:String>
+    <sys:String x:Key="Inv_Confirm">Confirm</sys:String>
+    <sys:String x:Key="Inv_Yes">Yes</sys:String>
+    <sys:String x:Key="Inv_No">No</sys:String>
+
+    <!-- Settings -->
+    <sys:String x:Key="Set_Title">Settings</sys:String>
+    <sys:String x:Key="Set_Theme">Appearance</sys:String>
+    <sys:String x:Key="Set_ThemeLight">☀️ Light theme</sys:String>
+    <sys:String x:Key="Set_ThemeDark">🌙 Dark theme</sys:String>
+    <sys:String x:Key="Set_Language">Interface language</sys:String>
+    <sys:String x:Key="Set_LangUA">🇺🇦 Ukrainian</sys:String>
+    <sys:String x:Key="Set_LangEN">🇬🇧 English</sys:String>
+    <sys:String x:Key="Set_Account">Account</sys:String>
+    <sys:String x:Key="Set_CurrentUser">Current user:</sys:String>
+    <sys:String x:Key="Set_Role">Role:</sys:String>
+    <sys:String x:Key="Set_LogoutBtn">Log out</sys:String>
+
+    <!-- Admin -->
+    <sys:String x:Key="Admin_Title">Admin Panel</sys:String>
+    <sys:String x:Key="Admin_Users">User List</sys:String>
+    <sys:String x:Key="Admin_Username">Username</sys:String>
+    <sys:String x:Key="Admin_Role">Role</sys:String>
+    <sys:String x:Key="Admin_DeleteUser">Delete user</sys:String>
+    <sys:String x:Key="Admin_ConfirmDelete">Delete this user?</sys:String>
+    <sys:String x:Key="Admin_Logs">System Logs</sys:String>
+    <sys:String x:Key="Admin_RefreshLogs">Refresh</sys:String>
+
+    <!-- Additional pages -->
+    <sys:String x:Key="Reminders_Title">Medicine Reminders</sys:String>
+    <sys:String x:Key="Reminders_Desc">Here you can set up reminders for taking medicines.</sys:String>
+    <sys:String x:Key="Reminders_ColMed">Medicine</sys:String>
+    <sys:String x:Key="Reminders_ColTime">Time</sys:String>
+    <sys:String x:Key="Reminders_ColDosage">Dosage</sys:String>
+    <sys:String x:Key="Reminders_ColActions">Actions</sys:String>
+    <sys:String x:Key="Reminders_BtnDelete">Delete</sys:String>
+    <sys:String x:Key="Reminders_NewTitle">New Reminder</sys:String>
+    <sys:String x:Key="Reminders_LblMed">Medicine</sys:String>
+    <sys:String x:Key="Reminders_LblTime">Time (e.g., 08:00)</sys:String>
+    <sys:String x:Key="Reminders_LblDosage">Dosage (e.g., 1 pill)</sys:String>
+    <sys:String x:Key="Reminders_BtnAdd">Add</sys:String>
+    <sys:String x:Key="Reminders_ErrFill">Please fill all fields!</sys:String>
+    <sys:String x:Key="Reminders_ErrTitle">Error</sys:String>
+
+    <sys:String x:Key="Stat_Title">Cabinet Statistics</sys:String>
+    <sys:String x:Key="Stat_Desc">Here is the general statistics of medicines in your cabinet.</sys:String>
+    <sys:String x:Key="Stat_TotalKinds">Total distinct medicines:</sys:String>
+    <sys:String x:Key="Stat_TotalQty">Total quantity (items):</sys:String>
+    <sys:String x:Key="Stat_Expired">Expired medicines:</sys:String>
+    <sys:String x:Key="Stat_UniqueCat">Unique categories:</sys:String>
+
+    <!-- First Aid -->
+    <sys:String x:Key="FirstAid_Title">First Aid</sys:String>
+    <sys:String x:Key="FirstAid_Desc">Basic first aid instructions.</sys:String>
+    <sys:String x:Key="FirstAid_Burns">Burns</sys:String>
+    <sys:String x:Key="FirstAid_BurnsDesc">Rinse with cold water for 10-15 min. Apply a sterile bandage. Do not pop blisters!</sys:String>
+    <sys:String x:Key="FirstAid_Cuts">Cuts</sys:String>
+    <sys:String x:Key="FirstAid_CutsDesc">Clean the wound, apply antiseptic. Stop bleeding with pressure, apply plaster or bandage.</sys:String>
+
+</ResourceDictionary>

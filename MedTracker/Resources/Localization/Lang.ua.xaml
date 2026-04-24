@@ -1,0 +1,130 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Загальне -->
+    <sys:String x:Key="AppName">💊 MedTracker</sys:String>
+    <sys:String x:Key="Lang_UA">UA</sys:String>
+
+    <!-- Навігація -->
+    <sys:String x:Key="Nav_Home">Головна</sys:String>
+    <sys:String x:Key="Nav_Inventory">Список ліків</sys:String>
+    <sys:String x:Key="Nav_Settings">Налаштування</sys:String>
+    <sys:String x:Key="Nav_Admin">Адмін-панель</sys:String>
+    <sys:String x:Key="Nav_Reminders">Нагадування</sys:String>
+    <sys:String x:Key="Nav_Statistics">Статистика</sys:String>
+    <sys:String x:Key="Nav_FirstAid">Перша допомога</sys:String>
+    <sys:String x:Key="Nav_Logout">Вийти</sys:String>
+    <sys:String x:Key="Nav_WelcomeUser">Вітаємо,</sys:String>
+
+    <!-- Авторизація -->
+    <sys:String x:Key="Auth_Login">Вхід</sys:String>
+    <sys:String x:Key="Auth_Register">Реєстрація</sys:String>
+    <sys:String x:Key="Auth_Username">Логін</sys:String>
+    <sys:String x:Key="Auth_Password">Пароль</sys:String>
+    <sys:String x:Key="Auth_ConfirmPassword">Підтвердіть пароль</sys:String>
+    <sys:String x:Key="Auth_Role">Роль</sys:String>
+    <sys:String x:Key="Auth_RoleUser">Користувач</sys:String>
+    <sys:String x:Key="Auth_RoleAdmin">Адміністратор</sys:String>
+    <sys:String x:Key="Auth_LoginBtn">Увійти</sys:String>
+    <sys:String x:Key="Auth_RegisterBtn">Зареєструватись</sys:String>
+    <sys:String x:Key="Auth_NoAccount">Немає акаунту?</sys:String>
+    <sys:String x:Key="Auth_HasAccount">Вже є акаунт?</sys:String>
+    <sys:String x:Key="Auth_GoRegister">Зареєструватись</sys:String>
+    <sys:String x:Key="Auth_GoLogin">Увійти</sys:String>
+    <sys:String x:Key="Auth_ErrEmpty">Заповніть всі поля</sys:String>
+    <sys:String x:Key="Auth_ErrWrong">Невірний логін або пароль</sys:String>
+    <sys:String x:Key="Auth_ErrExists">Такий логін вже зайнятий</sys:String>
+    <sys:String x:Key="Auth_ErrPassMatch">Паролі не збігаються</sys:String>
+    <sys:String x:Key="Auth_ErrShortPass">Пароль має бути не менше 4 символів</sys:String>
+    <sys:String x:Key="Auth_Success">Реєстрацію успішно виконано!</sys:String>
+    <sys:String x:Key="Auth_Subtitle">Менеджер домашньої аптечки</sys:String>
+
+    <!-- Головна сторінка -->
+    <sys:String x:Key="Home_Title">Головна</sys:String>
+    <sys:String x:Key="Home_Welcome">Вітаємо в MedTracker!</sys:String>
+    <sys:String x:Key="Home_Desc">Ваш особистий менеджер домашньої аптечки</sys:String>
+    <sys:String x:Key="Home_TotalMeds">Всього ліків</sys:String>
+    <sys:String x:Key="Home_Expired">Прострочено</sys:String>
+    <sys:String x:Key="Home_LowStock">Мало залишилось</sys:String>
+    <sys:String x:Key="Home_GoInventory">Перейти до списку ліків</sys:String>
+    <sys:String x:Key="Home_ExpiredAlert">⚠️ Є прострочені ліки! Перегляньте список.</sys:String>
+
+    <!-- Список ліків -->
+    <sys:String x:Key="Inv_Title">Список медикаментів</sys:String>
+    <sys:String x:Key="Inv_Name">Назва</sys:String>
+    <sys:String x:Key="Inv_Category">Категорія</sys:String>
+    <sys:String x:Key="Inv_Quantity">К-ть</sys:String>
+    <sys:String x:Key="Inv_Expiry">Термін до</sys:String>
+    <sys:String x:Key="Inv_Notes">Нотатки</sys:String>
+    <sys:String x:Key="Inv_Details">Деталі препарату</sys:String>
+    <sys:String x:Key="Inv_NameLabel">Назва препарату:</sys:String>
+    <sys:String x:Key="Inv_CategoryLabel">Категорія:</sys:String>
+    <sys:String x:Key="Inv_QuantityLabel">Кількість:</sys:String>
+    <sys:String x:Key="Inv_ExpiryLabel">Термін придатності:</sys:String>
+    <sys:String x:Key="Inv_NotesLabel">Нотатки:</sys:String>
+    <sys:String x:Key="Inv_Save">Зберегти</sys:String>
+    <sys:String x:Key="Inv_Clear">Очистити</sys:String>
+    <sys:String x:Key="Inv_Delete">Видалити</sys:String>
+    <sys:String x:Key="Inv_Search">Пошук ліків...</sys:String>
+    <sys:String x:Key="Inv_FilterAll">Всі категорії</sys:String>
+    <sys:String x:Key="Inv_ConfirmDelete">Видалити цей препарат?</sys:String>
+    <sys:String x:Key="Inv_Confirm">Підтвердження</sys:String>
+    <sys:String x:Key="Inv_Yes">Так</sys:String>
+    <sys:String x:Key="Inv_No">Ні</sys:String>
+
+    <!-- Налаштування -->
+    <sys:String x:Key="Set_Title">Налаштування</sys:String>
+    <sys:String x:Key="Set_Theme">Тема оформлення</sys:String>
+    <sys:String x:Key="Set_ThemeLight">☀️ Світла тема</sys:String>
+    <sys:String x:Key="Set_ThemeDark">🌙 Темна тема</sys:String>
+    <sys:String x:Key="Set_Language">Мова інтерфейсу</sys:String>
+    <sys:String x:Key="Set_LangUA">🇺🇦 Українська</sys:String>
+    <sys:String x:Key="Set_LangEN">🇬🇧 English</sys:String>
+    <sys:String x:Key="Set_Account">Аккаунт</sys:String>
+    <sys:String x:Key="Set_CurrentUser">Поточний користувач:</sys:String>
+    <sys:String x:Key="Set_Role">Роль:</sys:String>
+    <sys:String x:Key="Set_LogoutBtn">Вийти з акаунту</sys:String>
+
+    <!-- Адмін панель -->
+    <sys:String x:Key="Admin_Title">Панель адміністратора</sys:String>
+    <sys:String x:Key="Admin_Users">Список користувачів</sys:String>
+    <sys:String x:Key="Admin_Username">Логін</sys:String>
+    <sys:String x:Key="Admin_Role">Роль</sys:String>
+    <sys:String x:Key="Admin_DeleteUser">Видалити користувача</sys:String>
+    <sys:String x:Key="Admin_ConfirmDelete">Видалити цього користувача?</sys:String>
+    <sys:String x:Key="Admin_Logs">Логи системи</sys:String>
+    <sys:String x:Key="Admin_RefreshLogs">Оновити</sys:String>
+
+    <!-- Додаткові сторінки -->
+    <sys:String x:Key="Reminders_Title">Нагадування про прийом ліків</sys:String>
+    <sys:String x:Key="Reminders_Desc">Тут ви можете налаштувати нагадування про прийом медикаментів.</sys:String>
+    <sys:String x:Key="Reminders_ColMed">Препарат</sys:String>
+    <sys:String x:Key="Reminders_ColTime">Час</sys:String>
+    <sys:String x:Key="Reminders_ColDosage">Доза</sys:String>
+    <sys:String x:Key="Reminders_ColActions">Дії</sys:String>
+    <sys:String x:Key="Reminders_BtnDelete">Видалити</sys:String>
+    <sys:String x:Key="Reminders_NewTitle">Нове нагадування</sys:String>
+    <sys:String x:Key="Reminders_LblMed">Препарат</sys:String>
+    <sys:String x:Key="Reminders_LblTime">Час (напр. 08:00)</sys:String>
+    <sys:String x:Key="Reminders_LblDosage">Доза (напр. 1 таб)</sys:String>
+    <sys:String x:Key="Reminders_BtnAdd">Додати</sys:String>
+    <sys:String x:Key="Reminders_ErrFill">Заповніть всі поля!</sys:String>
+    <sys:String x:Key="Reminders_ErrTitle">Помилка</sys:String>
+
+    <sys:String x:Key="Stat_Title">Статистика аптечки</sys:String>
+    <sys:String x:Key="Stat_Desc">Тут відображається загальна статистика по лікам у вашій аптечці.</sys:String>
+    <sys:String x:Key="Stat_TotalKinds">Всього найменувань:</sys:String>
+    <sys:String x:Key="Stat_TotalQty">Загальна кількість (шт):</sys:String>
+    <sys:String x:Key="Stat_Expired">Прострочені ліки:</sys:String>
+    <sys:String x:Key="Stat_UniqueCat">Унікальних категорій:</sys:String>
+
+    <!-- Перша допомога -->
+    <sys:String x:Key="FirstAid_Title">Перша допомога</sys:String>
+    <sys:String x:Key="FirstAid_Desc">Базові інструкції з надання першої допомоги.</sys:String>
+    <sys:String x:Key="FirstAid_Burns">Опіки</sys:String>
+    <sys:String x:Key="FirstAid_BurnsDesc">Промити холодною водою 10-15 хв. Накласти стерильну пов'язку. Не проколювати пухирі!</sys:String>
+    <sys:String x:Key="FirstAid_Cuts">Порізи</sys:String>
+    <sys:String x:Key="FirstAid_CutsDesc">Промити рану, обробити антисептиком. Зупинити кровотечу натисканням, накласти пластир або бинт.</sys:String>
+
+</ResourceDictionary>

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace MedTracker.Models
@@ -8,44 +9,60 @@ namespace MedTracker.Models
         private string _name;
         private string _category;
         private int _quantity;
+        private DateTime _expiryDate;
+        private string _notes;
 
         public string Name
         {
             get => _name;
             set { _name = value; OnPropertyChanged(); }
         }
+
         public string Category
         {
             get => _category;
             set { _category = value; OnPropertyChanged(); }
         }
+
         public int Quantity
         {
             get => _quantity;
             set { _quantity = value; OnPropertyChanged(); }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public DateTime ExpiryDate
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get => _expiryDate;
+            set { _expiryDate = value; OnPropertyChanged(); }
         }
 
-        // --- ВАЛІДАЦІЯ ДАНИХ ---
+        public string Notes
+        {
+            get => _notes;
+            set { _notes = value; OnPropertyChanged(); }
+        }
+
+        // Перевіряємо чи термін не вийшов
+        public bool IsExpired => ExpiryDate < DateTime.Today && ExpiryDate != DateTime.MinValue;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string name = null)
+            => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+
+        // --- ВАЛІДАЦІЯ ---
         public string Error => null;
 
         public string this[string columnName]
         {
             get
             {
-                string result = null;
                 if (columnName == nameof(Name) && string.IsNullOrWhiteSpace(Name))
-                    result = "Назва не може бути порожньою";
+                    return "Назва не може бути порожньою";
                 if (columnName == nameof(Category) && string.IsNullOrWhiteSpace(Category))
-                    result = "Введіть категорію препарату";
+                    return "Введіть категорію препарату";
                 if (columnName == nameof(Quantity) && Quantity < 0)
-                    result = "Кількість не може бути від'ємною";
-                return result;
+                    return "Кількість не може бути від'ємною";
+                return null;
             }
         }
     }

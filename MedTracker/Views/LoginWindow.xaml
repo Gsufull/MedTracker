@@ -1,0 +1,31 @@
+<Window x:Class="MedTracker.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource AppName}" Height="550" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        Background="{DynamicResource BgColor}">
+
+    <Grid>
+        <Border Style="{DynamicResource CardStyle}" Margin="20" VerticalAlignment="Center">
+            <StackPanel>
+                <TextBlock Text="{DynamicResource AppName}" FontSize="24" FontWeight="Bold" Foreground="{DynamicResource AccentColor}" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                <TextBlock Text="{DynamicResource Auth_Subtitle}" FontSize="14" Foreground="{DynamicResource SubTextColor}" HorizontalAlignment="Center" Margin="0,0,0,30"/>
+
+                <TextBlock Text="{DynamicResource Auth_Username}" Style="{DynamicResource LabelStyle}"/>
+                <TextBox x:Name="TxtUsername" Height="40" Margin="0,0,0,15"/>
+
+                <TextBlock Text="{DynamicResource Auth_Password}" Style="{DynamicResource LabelStyle}"/>
+                <PasswordBox x:Name="TxtPassword" Height="40" Margin="0,0,0,5"/>
+                
+                <TextBlock x:Name="TxtError" Foreground="{DynamicResource DangerColor}" FontSize="12" Margin="0,0,0,15" Visibility="Collapsed" TextWrapping="Wrap"/>
+
+                <Button Content="{DynamicResource Auth_LoginBtn}" Style="{DynamicResource ActionBtnStyle}" Height="45" Click="BtnLogin_Click" Margin="0,10,0,20"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock Text="{DynamicResource Auth_NoAccount}" Foreground="{DynamicResource SubTextColor}" Margin="0,0,5,0"/>
+                    <Button Content="{DynamicResource Auth_GoRegister}" Style="{DynamicResource NeutralBtnStyle}" Background="Transparent" Foreground="{DynamicResource AccentColor}" Padding="0" Cursor="Hand" Click="BtnGoRegister_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

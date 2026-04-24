@@ -1,8 +1,10 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using MedTracker.Models;
+using MedTracker.Services;
 
 namespace MedTracker.ViewModels
 {
@@ -18,14 +20,15 @@ namespace MedTracker.ViewModels
             {
                 _selectedMedicine = value;
                 OnPropertyChanged();
-                // Якщо вибрали препарат зі списку, копіюємо його у форму для редагування
                 if (_selectedMedicine != null)
                 {
                     CurrentMedicine = new Medicine
                     {
                         Name = _selectedMedicine.Name,
                         Category = _selectedMedicine.Category,
-                        Quantity = _selectedMedicine.Quantity
+                        Quantity = _selectedMedicine.Quantity,
+                        ExpiryDate = _selectedMedicine.ExpiryDate,
+                        Notes = _selectedMedicine.Notes
                     };
                 }
             }
@@ -44,13 +47,10 @@ namespace MedTracker.ViewModels
 
         public InventoryViewModel()
         {
-            Medicines = new ObservableCollection<Medicine>
-            {
-                new Medicine { Name = "Парацетамол", Category = "Жарознижувальні", Quantity = 10 },
-                new Medicine { Name = "Спазмалгон", Category = "Знеболювальні", Quantity = 5 }
-            };
+            var loaded = MedicineService.LoadMedicines();
+            Medicines = new ObservableCollection<Medicine>(loaded);
 
-            CurrentMedicine = new Medicine();
+            CurrentMedicine = new Medicine { ExpiryDate = System.DateTime.Today.AddYears(1) };
 
             SaveCommand = new RelayCommand(Save, CanSave);
             DeleteCommand = new RelayCommand(Delete, CanDelete);
@@ -68,21 +68,26 @@ namespace MedTracker.ViewModels
         {
             if (SelectedMedicine != null)
             {
-                // ОНОВЛЕННЯ (Update)
                 SelectedMedicine.Name = CurrentMedicine.Name;
                 SelectedMedicine.Category = CurrentMedicine.Category;
                 SelectedMedicine.Quantity = CurrentMedicine.Quantity;
+                SelectedMedicine.ExpiryDate = CurrentMedicine.ExpiryDate;
+                SelectedMedicine.Notes = CurrentMedicine.Notes;
             }
             else
             {
-                // СТВОРЕННЯ (Create)
                 Medicines.Add(new Medicine
                 {
                     Name = CurrentMedicine.Name,
                     Category = CurrentMedicine.Category,
-                    Quantity = CurrentMedicine.Quantity
+                    Quantity = CurrentMedicine.Quantity,
+                    ExpiryDate = CurrentMedicine.ExpiryDate,
+                    Notes = CurrentMedicine.Notes
                 });
             }
+            
+            MedicineService.SaveMedicines(Medicines.ToList());
+            Logger.Log($"Збережено медикамент: {CurrentMedicine.Name}");
             Clear(null);
         }
 
@@ -90,10 +95,11 @@ namespace MedTracker.ViewModels
 
         private void Delete(object obj)
         {
-            // ВИДАЛЕННЯ (Delete)
             if (SelectedMedicine != null)
             {
+                Logger.Log($"Видалено медикамент: {SelectedMedicine.Name}");
                 Medicines.Remove(SelectedMedicine);
+                MedicineService.SaveMedicines(Medicines.ToList());
                 Clear(null);
             }
         }
@@ -101,7 +107,7 @@ namespace MedTracker.ViewModels
         private void Clear(object obj)
         {
             SelectedMedicine = null;
-            CurrentMedicine = new Medicine();
+            CurrentMedicine = new Medicine { ExpiryDate = System.DateTime.Today.AddYears(1) };
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

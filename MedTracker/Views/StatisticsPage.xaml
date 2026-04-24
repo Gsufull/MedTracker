@@ -1,0 +1,49 @@
+<Page x:Class="MedTracker.Views.StatisticsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="{DynamicResource Stat_Title}"
+      Loaded="Page_Loaded">
+
+    <Grid Background="{DynamicResource BgColor}" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{DynamicResource Stat_Title}" Style="{DynamicResource PageTitleStyle}"/>
+        <TextBlock Grid.Row="1" Text="{DynamicResource Stat_Desc}" Foreground="{DynamicResource SubTextColor}" FontSize="16" Margin="0,0,0,20"/>
+
+        <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Border Style="{DynamicResource CardStyle}" Width="250" Margin="0,0,20,20">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Stat_TotalKinds}" FontSize="16" Foreground="{DynamicResource SubTextColor}"/>
+                        <TextBlock x:Name="TxtTotalKinds" Text="0" FontSize="36" FontWeight="Bold" Foreground="{DynamicResource AccentColor}" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+                
+                <Border Style="{DynamicResource CardStyle}" Width="250" Margin="0,0,20,20">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Stat_TotalQty}" FontSize="16" Foreground="{DynamicResource SubTextColor}"/>
+                        <TextBlock x:Name="TxtTotalQuantity" Text="0" FontSize="36" FontWeight="Bold" Foreground="{DynamicResource AccentColor}" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{DynamicResource CardStyle}" Width="250" Margin="0,0,20,20">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Stat_Expired}" FontSize="16" Foreground="{DynamicResource SubTextColor}"/>
+                        <TextBlock x:Name="TxtExpiredCount" Text="0" FontSize="36" FontWeight="Bold" Foreground="{DynamicResource DangerColor}" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Style="{DynamicResource CardStyle}" Width="250" Margin="0,0,20,20">
+                    <StackPanel>
+                        <TextBlock Text="{DynamicResource Stat_UniqueCat}" FontSize="16" Foreground="{DynamicResource SubTextColor}"/>
+                        <TextBlock x:Name="TxtCategoriesCount" Text="0" FontSize="36" FontWeight="Bold" Foreground="{DynamicResource TextColor}" Margin="0,10,0,0"/>
+                    </StackPanel>
+                </Border>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

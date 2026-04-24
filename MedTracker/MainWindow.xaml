@@ -1,29 +1,50 @@
-﻿<Window x:Class="MedTracker.MainWindow"
+<Window x:Class="MedTracker.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MedTracker - Менеджер аптечки" Height="600" Width="900"
-        MinHeight="500" MinWidth="750" WindowStartupLocation="CenterScreen"
-        FontFamily="Segoe UI">
+        Title="{DynamicResource AppName}" Height="700" Width="1000"
+        MinHeight="600" MinWidth="800" WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource BgColor}">
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220"/>
+            <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Column="0" Background="#2C3E50">
-            <StackPanel Margin="0, 30, 0, 0">
-                <TextBlock Text="💊 MedTracker" Foreground="White" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,40"/>
+        <!-- Sidebar -->
+        <Border Grid.Column="0" Background="{DynamicResource SidebarBg}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-                <Button x:Name="BtnHome" Click="BtnHome_Click" Content="Головна" Style="{StaticResource ActionBtnStyle}" Height="45" Margin="15,5"/>
-                <Button x:Name="BtnInventory" Click="BtnInventory_Click" Content="Список ліків" Style="{StaticResource ActionBtnStyle}" Height="45" Margin="15,5"/>
-                
-                <Button x:Name="BtnSettings" Click="BtnSettings_Click" Content="Налаштування" Style="{StaticResource ActionBtnStyle}" Height="45" Margin="15,5"/>
-            </StackPanel>
+                <StackPanel Grid.Row="0" Margin="20, 30, 20, 40">
+                    <TextBlock Text="{DynamicResource AppName}" Foreground="{DynamicResource SidebarText}" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="1">
+                    <Button x:Name="BtnHome" Click="BtnHome_Click" Content="{DynamicResource Nav_Home}" Style="{DynamicResource SidebarBtnStyle}"/>
+                    <Button x:Name="BtnInventory" Click="BtnInventory_Click" Content="{DynamicResource Nav_Inventory}" Style="{DynamicResource SidebarBtnStyle}"/>
+                    <Button x:Name="BtnReminders" Click="BtnReminders_Click" Content="{DynamicResource Nav_Reminders}" Style="{DynamicResource SidebarBtnStyle}"/>
+                    <Button x:Name="BtnStatistics" Click="BtnStatistics_Click" Content="{DynamicResource Nav_Statistics}" Style="{DynamicResource SidebarBtnStyle}"/>
+                    <Button x:Name="BtnFirstAid" Click="BtnFirstAid_Click" Content="{DynamicResource Nav_FirstAid}" Style="{DynamicResource SidebarBtnStyle}"/>
+                    <Button x:Name="BtnSettings" Click="BtnSettings_Click" Content="{DynamicResource Nav_Settings}" Style="{DynamicResource SidebarBtnStyle}"/>
+                    
+                    <Button x:Name="BtnAdmin" Click="BtnAdmin_Click" Content="{DynamicResource Nav_Admin}" Style="{DynamicResource SidebarBtnStyle}" Visibility="Collapsed"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Margin="20, 0, 20, 30">
+                    <TextBlock x:Name="TxtWelcome" Foreground="{DynamicResource SubTextColor}" FontSize="13" HorizontalAlignment="Center" Margin="0,0,0,10"/>
+                    <Button x:Name="BtnLogout" Click="BtnLogout_Click" Content="{DynamicResource Nav_Logout}" Style="{DynamicResource DangerBtnStyle}"/>
+                </StackPanel>
+            </Grid>
         </Border>
 
-        <Border Grid.Column="1" Background="#ECF0F1">
-            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Margin="20"/>
+        <!-- Main Content -->
+        <Border Grid.Column="1" Background="{DynamicResource BgColor}">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
         </Border>
     </Grid>
 </Window>

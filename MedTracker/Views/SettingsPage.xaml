@@ -1,16 +1,57 @@
-﻿<Page x:Class="MedTracker.Views.SettingsPage"
+<Page x:Class="MedTracker.Views.SettingsPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:MedTracker.Views"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingsPage">
+      Title="{DynamicResource Set_Title}">
 
-    <Grid Background="{DynamicResource BgColor}">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Увімкнути темну тему" Click="BtnTheme_Click" Padding="10" Background="#2C3E50" Foreground="White"/>
+    <Grid Background="{DynamicResource BgColor}" Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="{DynamicResource Set_Title}" Style="{DynamicResource PageTitleStyle}"/>
+
+        <StackPanel Grid.Row="1" Width="500" HorizontalAlignment="Left">
+            
+            <!-- Appearance -->
+            <Border Style="{DynamicResource CardStyle}" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Theme}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextColor}" Margin="0,0,0,15"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="{DynamicResource Set_ThemeLight}" Style="{DynamicResource NeutralBtnStyle}" Width="200" Margin="0,0,10,0" Click="BtnThemeLight_Click"/>
+                        <Button Content="{DynamicResource Set_ThemeDark}" Style="{DynamicResource NeutralBtnStyle}" Width="200" Click="BtnThemeDark_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Language -->
+            <Border Style="{DynamicResource CardStyle}" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Language}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextColor}" Margin="0,0,0,15"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="{DynamicResource Set_LangUA}" Style="{DynamicResource NeutralBtnStyle}" Width="200" Margin="0,0,10,0" Click="BtnLangUA_Click"/>
+                        <Button Content="{DynamicResource Set_LangEN}" Style="{DynamicResource NeutralBtnStyle}" Width="200" Click="BtnLangEN_Click"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- Account Info -->
+            <Border Style="{DynamicResource CardStyle}">
+                <StackPanel>
+                    <TextBlock Text="{DynamicResource Set_Account}" FontSize="18" FontWeight="SemiBold" Foreground="{DynamicResource TextColor}" Margin="0,0,0,15"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="{DynamicResource Set_CurrentUser}" Foreground="{DynamicResource SubTextColor}" Width="150"/>
+                        <TextBlock x:Name="TxtCurrentUser" Foreground="{DynamicResource TextColor}" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                        <TextBlock Text="{DynamicResource Set_Role}" Foreground="{DynamicResource SubTextColor}" Width="150"/>
+                        <TextBlock x:Name="TxtRole" Foreground="{DynamicResource TextColor}" FontWeight="Bold"/>
+                    </StackPanel>
+                    
+                    <Button Content="{DynamicResource Set_LogoutBtn}" Style="{DynamicResource DangerBtnStyle}" Width="200" HorizontalAlignment="Left" Click="BtnLogout_Click"/>
+                </StackPanel>
+            </Border>
+            
         </StackPanel>
     </Grid>
 </Page>
